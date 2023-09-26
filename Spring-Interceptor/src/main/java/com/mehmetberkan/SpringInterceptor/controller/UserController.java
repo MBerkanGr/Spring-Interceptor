@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -15,8 +17,8 @@ public class UserController {
     UserService service;
 
     @PostMapping
-    public User addUser(@RequestParam("name") String name) {
-        return service.addUser(name);
+    public User addUser(@RequestParam("name") String name, HttpSession session) {
+        return service.addUser(name, session);
     }
 
 }

@@ -14,4 +14,8 @@ public class UserContext {
     public static void setValue(Map<String,String> stringMap) {
         mapThreadLocal.set(stringMap);
     }
+
+    public static void removeThreadLocal() {
+        mapThreadLocal.remove();
+    }
 }
