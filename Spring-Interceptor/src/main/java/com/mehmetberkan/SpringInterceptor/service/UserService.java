@@ -26,13 +26,6 @@ public class UserService {
         System.out.println("Ip : " + session.getAttribute("ip"));
         System.out.println("Login Time :" + session.getAttribute("loginTime"));
 
-        long maxInactiveInterval = 10 * 60;
-        long inactiveDuration = (System.currentTimeMillis() - session.getLastAccessedTime()) / 1000;
-
-        if(maxInactiveInterval - inactiveDuration < 0L) {
-            session.invalidate();
-        }
-
         return user;
     }
 }
